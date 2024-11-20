@@ -1,0 +1,70 @@
+@host = http://localhost:3000
+
+GET {{host}}/api/products
+
+###
+GET {{host}}/api/products/dpt/hogar
+
+###
+GET {{host}}/api/products/price?min=50&max=90
+
+###
+POST {{host}}/api/products
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjcyMjhmNDU2MDY0ZWMwNDgxNjdmMjY1IiwidXNlcl9yb2xlIjoicmVndWxhciIsImlhdCI6MTczMDQwMTgxMSwiZXhwIjoxNzMwNDAyMTExfQ.GjEqHvb8UrOL3tEw7X0RzFCV1W8-zEhKeZ6pYC1mLFM
+
+{
+    "name":"Tenedor",
+    "description": "Pincha muy bien",
+    "price": 2,
+    "department": "hogar",
+    "stock": 90,
+    "available": true
+}
+
+###
+PUT {{host}}/api/products/671b89453c3445b535fd408d
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjcyMjhmNDU2MDY0ZWMwNDgxNjdmMjY1IiwidXNlcl9yb2xlIjoicmVndWxhciIsImlhdCI6MTczMDQwMTA2OCwiZXhwIjoxNzMwNDAxMzY4fQ.2PJzZYgARGcd2pHEKzS4yn76JpyGFC4Lc0TSIjx60hg
+
+{
+    "name": "Pantalones cortos azules"
+}
+
+###
+DELETE {{host}}/api/products/67227a21241f724689242538
+
+####################
+#     API USERS    #
+####################
+
+POST {{host}}/api/users/register
+Content-Type: application/json
+
+{
+    "username": "mario",
+    "email": "mario@gmail.com",
+    "password": "12345"
+}
+
+###
+POST {{host}}/api/users/login
+Content-Type: application/json
+
+{
+    "email": "mario@gmail.com",
+    "password": "12345"
+}
+
+###########
+PUT {{host}}/api/users/add-product
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjcyMjhmNDU2MDY0ZWMwNDgxNjdmMjY1IiwidXNlcl9yb2xlIjoicmVndWxhciIsImlhdCI6MTczMDQwNDAyOCwiZXhwIjoxNzMwNDIyMDI4fQ.rWfP6Wan3B_NQ9NpZ9wYSZzh1zpe7Z7gbUaHevHD6KI
+
+{
+    "product_id": "6723d0da0b8672db5684f78e"
+}
+
+###
+GET {{host}}/api/users/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjcyMjhmNDU2MDY0ZWMwNDgxNjdmMjY1IiwidXNlcl9yb2xlIjoicmVndWxhciIsImlhdCI6MTczMDQwNDY5OSwiZXhwIjoxNzMwNDIyNjk5fQ.rAisOJfyGWgRKBnZfmWfOW_f7vvEzbTQoF08NmV7Lr4
